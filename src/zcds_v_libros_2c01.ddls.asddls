@@ -20,5 +20,6 @@ define view entity ZCDS_V_LIBROS_2C01
       @Semantics.amount.currencyCode : 'Moneda'
       precio    as Precio,
       moneda    as Moneda,
-      formato   as Formato
+      formato   as Formato,
+      url as URLImage
 }

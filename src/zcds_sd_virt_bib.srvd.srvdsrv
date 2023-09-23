@@ -1,0 +1,6 @@
+@EndUserText.label: 'CDS SD Biblioteca Virtual'
+define service ZCDS_SD_VIRT_BIB {
+  expose ZCDS_E_BIB_VIRT_2C01 as Biblioteca_Virtual;
+  expose ZCDS_E_CAT_2C01;
+  expose ZCDS_E_CLIENTS_2C01;
+}
