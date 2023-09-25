@@ -10,6 +10,7 @@
 define view entity ZCDS_E_CAT_2C01
   as select from ztb_catego_2c01
 {
+
   key bi_categ    as BiCateg,
       descripcion as Descripcion
 }

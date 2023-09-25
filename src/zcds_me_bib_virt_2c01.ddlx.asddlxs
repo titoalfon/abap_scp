@@ -54,8 +54,8 @@ annotate entity ZCDS_E_BIB_VIRT_2C01 with
   @UI: { lineItem: [{ position: 20,
                       importance: #HIGH }]}
   Autor;
-  @Consumption.valueHelpDefinition: [{ entity:{ name: 'zc_categorias_log',
-                                                element: 'Descripcion'} }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZCDS_E_CAT_2C01', 
+                                                element: 'BiCateg'} }]
   @UI: { fieldGroup: [{ qualifier: 'DetallesLibro',
                         position: 20}],
          selectionField: [{ position: 20 }]}

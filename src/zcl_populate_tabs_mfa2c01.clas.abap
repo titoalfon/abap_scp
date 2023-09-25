@@ -15,11 +15,11 @@ ENDCLASS.
 CLASS zcl_populate_tabs_mfa2c01 IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
-    me->populate_acc_cat(  ).
-    me->populate_catego(  ).
-    me->populate_clients(  ).
+    " me->populate_acc_cat(  ).
+    " me->populate_catego(  ).
+    "  me->populate_clients(  ).
     me->populate_clnts_lib(  ).
-    me->populate_libros(  ).
+    "  me->populate_libros(  ).
     out->write('Ejecucion terminada').
 
   ENDMETHOD.
@@ -28,7 +28,7 @@ CLASS zcl_populate_tabs_mfa2c01 IMPLEMENTATION.
 
     DATA lt_acc_cat TYPE TABLE OF ztb_acc_cat_2c01.
 
-    lt_acc_cat = value #(
+    lt_acc_cat = VALUE #(
     ( bi_categ ='A' tipo_acceso ='1' )
     ( bi_categ ='B' tipo_acceso ='1' )
     ( bi_categ ='C' tipo_acceso ='2' )
@@ -50,7 +50,7 @@ CLASS zcl_populate_tabs_mfa2c01 IMPLEMENTATION.
 
     DATA lt_catego TYPE TABLE OF ztb_catego_2c01.
 
-    lt_catego = value #(
+    lt_catego = VALUE #(
     ( bi_categ ='A' descripcion ='Filosofía, psicología')
     ( bi_categ ='B' descripcion ='Religión, mitología')
     ( bi_categ ='C' descripcion ='Ciencias sociales (derecho, política, economía)')
@@ -71,7 +71,7 @@ CLASS zcl_populate_tabs_mfa2c01 IMPLEMENTATION.
 
     DATA lt_clients TYPE TABLE OF ztb_clients_2c01.
 
-    lt_clients =  value #(
+    lt_clients =  VALUE #(
     ( id_cliente = '005638984K' tipo_acceso = '1' nombre = 'Andrew' apellidos = 'Roberts' email = 'STEPHANIE.ROBERTS@EMAIL.COM' url = 'https://d4.logaligroup.com/wp-content/uploads/2019/11/24.2.png' )
     ( id_cliente = '049320909Q' tipo_acceso = '2' nombre = 'Natalie' apellidos = 'Clark' email = 'PETER.CLARK@EMAIL.COM' url = 'https://d4.logaligroup.com/wp-content/uploads/2019/12/41.png' )
     ( id_cliente = '049573865T' tipo_acceso = '1' nombre = 'Faith' apellidos = 'Black' email = 'DAN.BLACK@EMAIL.COM' url = 'https://d4.logaligroup.com/wp-content/uploads/2019/11/24.2.png' )
@@ -106,7 +106,7 @@ CLASS zcl_populate_tabs_mfa2c01 IMPLEMENTATION.
 
     DATA lt_clnts_lib TYPE TABLE OF ztb_clnts_lib_ac.
 
-    lt_clnts_lib = value #(
+    lt_clnts_lib = VALUE #(
     ( id_cliente = '005638984K' id_libro = '000001' )
     ( id_cliente = '005638984K' id_libro = '000020' )
     ( id_cliente = '005638984K' id_libro = '000021' )
@@ -136,7 +136,9 @@ CLASS zcl_populate_tabs_mfa2c01 IMPLEMENTATION.
     ( id_cliente = '453532543O' id_libro = '000018' )
     ( id_cliente = '453532543O' id_libro = '000022' )
     ( id_cliente = '489632882D' id_libro = '000019' )
-    ( id_cliente = '540867547H' id_libro = '000020' ) ).
+    ( id_cliente = '540867547H' id_libro = '000020' )
+    ( id_cliente = '234234231T' id_libro = '000023' )
+     ).
 
     DELETE FROM ztb_clnts_lib_ac.
 
@@ -150,7 +152,7 @@ CLASS zcl_populate_tabs_mfa2c01 IMPLEMENTATION.
 
     DATA lt_libros TYPE TABLE OF ztb_libros_2c01.
 
-    lt_libros = value #(
+    lt_libros = VALUE #(
     ( id_libro = '000001' bi_categ = 'A' titulo = 'Diccionario de los sentimientos' autor = 'CAGIGAL, Jose Maria' editorial = 'ANAGRAMA' idioma = 'S' paginas = 350 precio = '84.99' moneda = 'USD' formato = 'E' url =
     'https://eltinteroeditorial.com/wp-content/uploads/2017/06/c%C3%B3mo-es-el-proceso-de-edici%C3%B3n.jpg' )
     ( id_libro = '000002' bi_categ = 'A' titulo = 'La selva del lenguaje' autor = 'Hoagland , M.' editorial = 'LATERZ A' idioma = 'S' paginas = 486 precio = 146 moneda = 'USD' formato = 'P' url =

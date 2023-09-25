@@ -26,9 +26,20 @@ define view entity ZCDS_E_BIB_VIRT_2C01
       Precio,
       Moneda,
       Formato,
-      '' as Text,
       _Categories.Descripcion,
-      _Ventas.Ventas,
+
+      case
+        when _Ventas.Ventas = 1 then 1
+        when _Ventas.Ventas = 2 then 2
+        when _Ventas.Ventas >= 3 then 3
+       else 0
+      end as Ventas,
+
+      case
+      when $projection.Ventas = 0  then 'Sin Ventas'
+      else ''
+      end as Text,
+
       URLImage,
       _ClientsLib
 
